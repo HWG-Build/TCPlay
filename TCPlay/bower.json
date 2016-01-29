@@ -1,0 +1,18 @@
+{
+  "name": "TCPlay",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "authors": [
+    "Jonathan Lee"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

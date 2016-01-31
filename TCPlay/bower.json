@@ -16,7 +16,13 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass": "bootstrap-sass-official#^3.3.6"
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.6",
+    "angular": "^1.4.9",
+    "jquery-ui-touch-punch": "*",
+    "jquery-ui": "^1.11.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jquery-ui-touch-punch": "*",
+    "jquery-ui": "^1.11.4"
+  }
 }

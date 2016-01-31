@@ -8,5 +8,10 @@ namespace TCPlay.Controllers
         {
             return View("HomePage");
         }
+
+        public IActionResult Notes()
+        {
+            return View("Notes")
+;        }
     }
 }

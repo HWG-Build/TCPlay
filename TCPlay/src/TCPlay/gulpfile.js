@@ -1,4 +1,4 @@
-﻿/// <binding Clean='clean' />
+﻿/// <binding BeforeBuild='compile-sass' Clean='clean' />
 "use strict";
 
 var gulp = require("gulp"),
@@ -7,14 +7,21 @@ var gulp = require("gulp"),
     cssmin = require("gulp-cssmin"),
     uglify = require("gulp-uglify");
 var sass = require("gulp-sass");
+var sourcemaps = require("gulp-sourcemaps");
 
 var paths = {
     webroot: "./wwwroot/"
 };
 
+var sassOptions = {
+    errLogToConsole: true,
+    outputStyle: 'expanded'
+};
+
 paths.js = paths.webroot + "js/**/*.js";
 paths.minJs = paths.webroot + "js/**/*.min.js";
 paths.css = paths.webroot + "css/**/*.css";
+paths.scss = paths.webroot + "css/**/*.scss";
 paths.minCss = paths.webroot + "css/**/*.min.css";
 paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
@@ -51,11 +58,12 @@ gulp.task("min", ["min:js", "min:css"]);
 
 //sass
 gulp.task('watch-sass', function () {
-    gulp.watch('*.scss', ['compile-sass']);
+    gulp.watch(paths.scss, ['compile-sass']);
 })
 
 gulp.task('compile-sass', function() {
-    gulp.src('*.scss')
-        .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(paths.css));
+    gulp.src(paths.scss)
+        .pipe(sass(sassOptions).on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.webroot + "css"));
 });

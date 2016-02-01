@@ -30,6 +30,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="SignalR" asp-action="SignalR">SignalR</a></li>
                         <li><a asp-controller="Home" asp-action="Notes">Notes</a></li>
                     </ul>
                 </div>
@@ -49,6 +50,8 @@
             <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
             <script src="~/lib/angular/angular.js"></script>
             <script src="~/lib/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+            <script src="~lib/SignalR/jquery.signalR-2.1.0.js"></script>
+            <script src="~/Signalr/hubs"></script>
             <script src="~/js/site.js" asp-append-version="true"></script>
         </environment>
         <environment names="Staging,Production">
@@ -66,6 +69,8 @@
             </script>
             <script src="~/lib/jquery-ui/jquery-ui.js"></script>
             <script src="~/lib/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+            <script src="~lib/SignalR/jquery.signalR-2.1.0.min.js"></script>
+            <script src="~/Signalr/hubs"></script>
             <script src="~/js/site.min.js" asp-append-version="true"></script>
         </environment>
 
